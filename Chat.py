@@ -1,10 +1,10 @@
 from openai import OpenAI
 import streamlit as st
 st.set_page_config(
-    page_title="GameBot",
+    page_title="GG",
     page_icon="GG",
 )
-st.title("Game Bot")
+st.title("GG")
 
 
 client = OpenAI(base_url="http://127.0.0.1:1234/v1",api_key="lm-studio")
@@ -19,7 +19,7 @@ for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
 
-if prompt := st.chat_input("Game Bot"):
+if prompt := st.chat_input("GG"):
     st.session_state.messages.append({"role": "user", "content": prompt})
     with st.chat_message("user"):
         st.markdown(prompt)
